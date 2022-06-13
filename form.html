@@ -1,0 +1,37 @@
+<h1>Personal form</h1>
+<p>ID : <input type="text" id="txt"></p>
+<p>Name : <input type="text" id="idName"></p>
+<p>Address : <input type="text"></p>
+<p>Phone : <input type="text"></p>
+<p>Email : <input type="text"></p>
+<p><input type="button" value="Check" onclick="process()"></p>
+<script>
+    var process=function()
+    {
+        //validate from using regex
+        var id=txt.value;
+        var name=idName.value;
+        let regid=/[0-9]/;
+        let regname=/^[A-Z a-z ]+[a-z A-Z]+$/;
+        var checkId=regid.test(id);
+        var checkName=regname.test(name);
+        if(checkId==true)
+        {
+            id="<br/>Id :"+txt.value+"<br/>";
+            document.write(id);
+        }
+        else
+        {
+            document.write("Error Id<br/>");
+        }
+        if(checkName == true )
+        {
+            name="<br/> Name: "+ name+ "<br/>";
+            document.write(name);
+        }
+        else
+        {
+           document.write("Error Name<br/>");
+         }
+    }
+</script>
